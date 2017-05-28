@@ -1,6 +1,6 @@
 var mongose = require('mongoose');
 var schema = mongose.Schema;
-var relationship = require('mongoose-relationship');
+//var relationship = require('mongoose-relationship');
 
 var ExpenseModel = new schema({
     year: {type: Number},
@@ -8,10 +8,10 @@ var ExpenseModel = new schema({
     amount: {type: Number},
     created: {type: Date},
     date: {type: Date},
-    account: {type: schema.ObjectId, ref: 'Account', childpath: 'expense'}
+    account: {type: schema.ObjectId, ref: 'Account'}
 });
 
-ExpenseModel.plugin(relationship, { relationshipPathName:'expenses' });
+//ExpenseModel.plugin(relationship, { relationshipPathName:'expenses' });
 
 ExpenseModel.pre('save', function(next) {
   var currentDate = new Date();

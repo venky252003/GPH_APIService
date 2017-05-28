@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var schema = new mongoose.Schema;
-var owner = require('OwnerModel');
-var relationship = require("mongoose-relationship");
+
+//var relationship = require("mongoose-relationship");
 
 var PaymentModel = new schema({
     year: {type: Number},
@@ -11,11 +11,11 @@ var PaymentModel = new schema({
     ownerId: {type: Number},
     created: {type: Date},
     date: {type: Date},
-    owner: { type:schema.ObjectId, ref:"Owner", childPath:"children" },
-    account: {type: schema.ObjectId, ref: 'Account', childPath: 'children'}
+    owner: { type:schema.ObjectId, ref:"Owner"},
+    account: {type: schema.ObjectId, ref: 'Account'}
 });
 
-PaymentModel.plugin(relationship, { relationshipPathName:['accounts', 'owners'] });
+//PaymentModel.plugin(relationship, { relationshipPathName:['accounts', 'owners'] });
 
 PaymentModel.pre('save', function(next) {
   var currentDate = new Date();
