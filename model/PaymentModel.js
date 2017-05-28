@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var schema = new mongoose.Schema;
+var schema = mongoose.Schema;
 
 //var relationship = require("mongoose-relationship");
 

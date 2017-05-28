@@ -1,14 +1,15 @@
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
-var relationship = require("mongoose-relationship");
 
-var Owner = new Schema({
+//var relationship = require("mongoose-relationship");
+
+var Owner = new schema({
     name: {type: String, require: true},
     age: {type: String},
     mobile: {type: Number, require: true},
     email: {type: String},
     flatNo: {type: String},
-    regDocNo: {type: string},
+    regDocNo: {type: String},
     created: {type: Date},
     committie: [{ type: schema.ObjectId, ref: 'Committe' }],
     payment:[{ type:schema.ObjectId, ref:"Payment" }]
