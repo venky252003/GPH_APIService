@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
+var relationship = require("mongoose-relationship");
 
 var Owner = new Schema({
     name: {type: String, require: true},
@@ -8,7 +9,9 @@ var Owner = new Schema({
     email: {type: String},
     flatNo: {type: String},
     regDocNo: {type: string},
-    created: {type: Date}
+    created: {type: Date},
+    committie: [{ type: schema.ObjectId, ref: 'Committe' }],
+    payment:[{ type:schema.ObjectId, ref:"Payment" }]
 });
 
 Owner.pre('save', function(next) {
