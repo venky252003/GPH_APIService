@@ -8,8 +8,8 @@ var PaymentModel = new schema({
     month: {type: Number},
     amount: {type: Number},
     status: {type: String},
-    ownerId: {type: Number},
     created: {type: Date},
+    type: {type: String},       //Revenue or Expense
     date: {type: Date},
     owner: { type:schema.ObjectId, ref:"Owner"},
     account: {type: schema.ObjectId, ref: 'Account'}

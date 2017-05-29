@@ -3,11 +3,10 @@ var schema = mongose.Schema;
 var relationship = require('mongoose-relationship');
 
 var AccountModel = new schema({
-    name: {type: String},
+    name: {type: String, required: true},
     type: {type: String},
     maintiance: {type: String},
-    payment: [{type: schema.ObjectId, ref: 'Payment' }],
-    expense: [{type: schema.ObjectId, ref: 'Expense'}]
+    payment: [{type: schema.ObjectId, ref: 'Payment' }]   
 });
 
 module.exports = mongose.model('Account', AccountModel);

@@ -9,8 +9,9 @@ var applicationController = function(){
             if(error){
                 res.status(400).send(error);
             }
-
-            res.status(201).json(app);
+            else{
+                res.status(201).json(app);
+            }
         });        
     }
 
@@ -28,17 +29,13 @@ var applicationController = function(){
         });
     }
 
-    var getbyId = function(req, res){
-
-    }
-
     var filiter =  function(req, res, next) {
-            application.findById(req.params.id, function(error, app){
+            application.findById(req.params.id, function(error, app){              
             if(error){
                 console.log(error);
                 res.status(500).send('Error ' + error);
             }
-            else if(app){
+            else if(app){             
                 req.app = app;
                 next();
             }
@@ -60,7 +57,7 @@ var applicationController = function(){
                 console.log(error);
                 res.status(500).send('Error ' + error);
             }
-            res.json(req.app);
+            res.status(200).json(req.app);
         });
     };
 
@@ -78,7 +75,7 @@ var applicationController = function(){
                 res.status(500).send('Error ' + error);
             }
 
-            res.json(req.app);
+            res.status(200).json(req.app);
         });
     };
 
