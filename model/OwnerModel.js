@@ -5,14 +5,14 @@ var schema = mongoose.Schema;
 
 var Owner = new schema({
     name: {type: String, require: true},
-    age: {type: String},
+    age: {type: Number},
     mobile: {type: Number, require: true},
     email: {type: String},
     flatNo: {type: String},
     regDocNo: {type: String},
-    created: {type: Date},
-    committie: [{ type: schema.ObjectId, ref: 'Committe' }],
-    payment:[{ type:schema.ObjectId, ref:"Payment" }]
+    created: {type: Date}
+    //committie: [{ type: schema.ObjectId, ref: 'Committe' }],
+    //payment:[{ type:schema.ObjectId, ref:"Payment" }]
 });
 
 Owner.pre('save', function(next) {

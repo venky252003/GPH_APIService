@@ -8,7 +8,7 @@ var accountController = function(){
             query.name = req.query.name;
         }
 
-        account.find(query, function(error, result){
+        account.find(query).populate('payment').exec(function(error, result){
             if(error)
                 res.status(400).send('No Data Found');
             else
@@ -47,7 +47,7 @@ var accountController = function(){
         req.account.type = req.body.type;
         req.account.maintiance = req.body.maintiance;
       
-        req.account.save();
+        //req.account.save();
         req.account.save(function(error){
             if(error){
                 console.log(error);
