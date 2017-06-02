@@ -20,7 +20,7 @@ describe('Utlity Controller test case', function(){
         var uitlityctl = require('../controller/utility.ctl')();
         uitlityctl.post(req, res);
 
-        //res.status.calledWith(200).should.equal(true, 'Error ' + res.status.args[0]);
+        res.status.calledWith(201).should.equal(true);
         //res.send.calledWith('').should.equal(true);
     })
 })

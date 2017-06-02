@@ -12,6 +12,7 @@ var utilityController = function(){
     }
 
     var post = function(req, res){
+        console.log(req.body);
         var uti = new utility(req.body);
         uti.save(function(error){
             if(error){
