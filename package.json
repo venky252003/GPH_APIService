@@ -7,6 +7,12 @@
     "start" : "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "source":{
+    "git": {
+      "url" : "https://github.com/venky252003/GPH_APIService.git",
+      "ref" : "master"
+    }
+  },
   "author": "venky",
   "license": "ISC",
   "dependencies": {
