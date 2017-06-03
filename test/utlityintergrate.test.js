@@ -1,19 +1,20 @@
 var should = require('should');
 var request = require('supertest');
 var app =require('../app.js');
-var mongoose = require('mongoose');
-var utility = mongoose.model('Utlity');
+//var mongoose = require('mongoose');
+//var utility = mongoose.model('Utlity');
 var agent = request.agent(app);
 
 describe('Utility CRUD process', function(){
     it('Should able save in DB for utility', function(done){
 
-        var utlity = {'name': 'Venky', 'mobile': '9884511', 'type': 'Carpenter'};
+        var utlity = {'name': 'Suresh', 'mobile': '75541112', 'type': 'Electrical'};
 
-        agent.post('api/utility').send(utility).expect(200)
+        agent.post('/api/utility').send(utlity).expect(201)
              .end(function(error, result){
-                 result.body.read.should.equal(false);
+                 result.body.read.should.not.equal(false);                 
                  result.body.should.have.property('_id');
+                 done();
              });
 
     });
