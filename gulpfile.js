@@ -7,7 +7,7 @@ gulp.task('default', function(){
     nodemon({
         script: 'app.js',
         ext: 'js',
-        env: { port: 3000},
+        env: { port: 3000, ip: 'localhost'},
         ignore: ['./node_modules/**']
     }).on('restart', function(){
         console.log('Restarting....');
