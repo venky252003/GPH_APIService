@@ -3,6 +3,7 @@ var accountController = function(){
     var account = require('../model/AccountModel');
     
     var get = function(req, res){
+        
         var query = {};
         if(req.query.name){
             query.name = req.query.name;
